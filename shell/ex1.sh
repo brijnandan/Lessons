@@ -21,7 +21,7 @@ if  [ "$#" -eq 0 ] || [ "$#" -gt 1 ]
 	}
 	else
 		touch $1.txt
-		if [ -f $1.txt ]
+		if [ -f $1.txt ]   #checks if the file is a regular file 
 			then
 			{
 				echo " the file is a regular file "
