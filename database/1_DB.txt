@@ -3,4 +3,16 @@ use brij;
 select database(); // to show which database we are currently using.
 mysql> CREATE TABLE company ( name VARCHAR(20) , age VARCHAR(10) , address VARCHAR(30));
 mysql> INSERT INTO COMPANY VALUES ('BRIJ', '20', 'DDUN');
-alter table company add gender varchar(10); //adding an extra column in the databases;
+
+ALTRING THE DATABASE:
+---------------------
+
+1. alter table company add gender varchar(10); //adding an extra column in the databases;
+2. dropping a column:  alter table company drop column address2;
+
+3. modifying a column: alter....TBD
+
+ _________and and or usage in insert______
+ mysql> select * from company where age='22' or address='kanpur';
+ select * from company where age='22' and address='rampur';
+
