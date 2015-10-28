@@ -16,3 +16,10 @@ ALTRING THE DATABASE:
  mysql> select * from company where age='22' or address='kanpur';
  select * from company where age='22' and address='rampur';
 
+
+
+
+select current_date();           //selects current date
+select current_timestamp();      //selects current time stamp
+
+
