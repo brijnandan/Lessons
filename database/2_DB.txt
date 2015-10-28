@@ -1,0 +1,17 @@
+This is the second file for the database commands.
+
+1. Distinct command: 
+
+select  distinct gender from company;
+select  distinct * from company;
+select distinct name from company where age=23;
+
+2. and and or operator
+
+ select * from company where age=22 and address='delhi';
+ select * from company where age=22 or address='rampur';
+
+3.  order by clause
+
+ select * from company order by name desc;
+ select * from company order by name asc; //by default it gives in ascending order1.
