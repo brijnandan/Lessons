@@ -26,3 +26,4 @@ update company set gender='male' where name='BRIJ';
 5. deleting a column
 
 delete from company where name ='ram';
+DELETE FROM CUSTOMERS;  to delete all the columns from a table
