@@ -15,3 +15,14 @@ select distinct name from company where age=23;
 
  select * from company order by name desc;
  select * from company order by name asc; //by default it gives in ascending order1.
+
+
+
+4. updating a column
+
+update company set gender='male' where name='BRIJ'; 
+
+
+5. deleting a column
+
+delete from company where name ='ram';
