@@ -1,0 +1,2 @@
+s.logger("
+inside the method
