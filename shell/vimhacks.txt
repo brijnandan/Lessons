@@ -1,0 +1,4 @@
+vim hacks
+
+1:  search and replcae   the contents 
+:g/timer/s//timesnow/gc
