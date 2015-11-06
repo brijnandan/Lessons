@@ -1,0 +1,46 @@
+read e
+a=$(echo "$e" | bc -l)
+#b=$(echo "$e" | bc)
+#echo $a $b
+c=$(echo "$a%1" | bc)
+
+nt=${a%.*}
+#echo "nt=$nt"
+#echo "c=$c"
+
+d1=$(echo "$c*1000" | bc)
+#echo "d1=$d1"
+#d2=${d1%.*}
+#echo "d2=$d2"
+d3=$(echo "$d1%1" | bc)
+#echo "d3=$d3"
+d4=$(echo "$d3*10" | bc)
+#echo "d4=$d4"
+d5=${d4%.*}
+#echo "d5=$d5"
+if [ $d5 -lt 0 ]
+        then
+                d5=$(echo "$d5*-1" | bc -l)
+              #  echo "d5pos= $d5"
+        else
+        #echo "d5normal=$d5"
+fi
+f=$(echo "$c*1000" | bc)
+#echo "f=$f"
+g=${f%.*}
+#echo "g=$g"
+if [ $g -lt 0 ]
+        then
+        g=$(echo "$g*-1" | bc)
+#S      echo "gnow is $g"
+else
+fi
+
+if [ $d5 -gt 4 ]
+then
+g=$(echo "$g+1" | bc)
+#echo "g at last is = $g"
+echo "$nt.$g"
+else
+echo "$nt.$g"
+fi
