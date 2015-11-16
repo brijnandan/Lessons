@@ -1,3 +1,5 @@
+# This script calculates the result of an arithmetic operation correct to three decimal places
+#for example 5+50*3/20 + (19*2)/7 is calculated as 17.929 
 read e
 a=$(echo "$e" | bc -l)
 #b=$(echo "$e" | bc)
