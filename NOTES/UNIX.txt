@@ -1,0 +1,10 @@
+adding user to sudies file in ubuntu or nix
+
+
+1. open visudo it says permission issues. Try sudo visudo
+
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+
+copy the above line and , 
+add the user instead of root
