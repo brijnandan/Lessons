@@ -1,0 +1,33 @@
+#this script creatyes   
+if [ -d temp1 ]
+then
+	echo " dir exists" 
+	echo " why do you want to create addition directory with same name :"
+	echo " Please select from the below reasons"
+	echo " 1: You dont know unix "
+	echo " 2: you are an idiot"
+	echo " 3: others" 
+	echo " enter choice 1,2 or 3"
+	read num
+	echo "you have entred $num"
+
+else
+
+
+	echo " does not exists"
+	Mkdir temp1
+fi
+
+case $num in
+
+1) echo " you need to  learn unix esle never login to my system"
+exit 0 
+;;
+2) echo "  nobody can help you"
+exit 0
+;;
+
+3) echo " specify reason "  
+exit 0 
+;;
+esac
