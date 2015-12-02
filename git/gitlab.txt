@@ -11,3 +11,39 @@ starting stopping and restarting the gitlab services.
 
 sudo gitlab-ctl status/restart/stop/start 
 
+
+
+
+taking the backups in gitlab
+
+1:  first step is to create the tar file which contains the db dump of the backup.
+
+sudo gitlab-rake gitlab:backup:create
+
+this command will create a file ******.tar in /var/opt/gitlab/backups/
+
+2: the tar has permission only for git:git and 0644 
+which can be changed from the file /etc/gitlab/gitlab.rb  and  gitlab.yml
+
+
+
+3. stop the services,
+
+
+sudo gitlab-ctl stop unicorn
+sudo gitlab-ctl stop sidekiq
+
+
+This command will overwrite the contents of your GitLab database!
+sudo gitlab-rake gitlab:backup:restore BACKUP=1393513186
+
+Start GitLab
+sudo gitlab-ctl start
+
+Check GitLab
+sudo gitlab-rake gitlab:check SANITIZE=true
+
+
+
+
+

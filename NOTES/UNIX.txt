@@ -8,3 +8,10 @@ root    ALL=(ALL:ALL) ALL
 
 copy the above line and , 
 add the user instead of root
+
+
+
+2.  To change the root users password in ubuntu debian, 
+    sudo passwd root
+(change the password as desired and then login to root using that password)
+
