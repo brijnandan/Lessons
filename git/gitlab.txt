@@ -1,0 +1,13 @@
+Installation:
+
+sudo apt-get install curl openssh-server ca-certificates postfix
+download the debian package from website. 
+
+dpkg -i gitlab-ce-XXX.deb
+
+sudo gitlab-ctl reconfigure
+
+starting stopping and restarting the gitlab services.
+
+sudo gitlab-ctl status/restart/stop/start 
+
