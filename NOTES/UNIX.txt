@@ -15,3 +15,16 @@ add the user instead of root
     sudo passwd root
 (change the password as desired and then login to root using that password)
 
+
+
+openjdk:
+
+
+to check the file which contains java version we need to goto 
+
+/usr/local/etc/javavms
+
+
+it contains the entry to java location
+
+cd /usr/local/openjdk6
