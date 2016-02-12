@@ -22,3 +22,7 @@ syntax is shown as below
 
 java -jar jenkins-cli.jar -s http://my.jenkins.host delete-builds myproject '1-7499' --username $user --password $password
 
+
+jenkins Live developement jenkins: https://ci.jenkins-ci.org/view/Infrastructure/
+
+
