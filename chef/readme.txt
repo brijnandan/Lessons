@@ -82,7 +82,34 @@ certs/localhost.crt
 
 
 
+
+
 ________________________________________________________________________________________
 
 some urls to remember.
 https://learn.chef.io/install-and-manage-your-own-chef-server/linux/install-chef-server/install-chef-server-using-your-hardware/
+
+
+https://learn.chef.io/install-and-manage-your-own-chef-server/linux/manage-a-node-on-your-chef-server/  till here done
+______________________________________________________________________________
+
+
+generating a chef cookbook:
+
+1> you have to install chef development kit in your environment.
+next step is to create recipes.
+
+2>chef generate cookbook cookbooks/hello_chef_server
+
+issue run it from cookbooks folder.
+write the recipes and then upload them to chef server.
+
+3>knife cookbook upload hello_chef_server
+
+
+4>  to list the cookbooks we need to run below command.
+
+knife cookbook lits
+
+
+
