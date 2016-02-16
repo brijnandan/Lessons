@@ -76,4 +76,13 @@ verify the authenticity of these certificates after downloading.
 
 Adding certificate for localhost in e:\docs\cbdocs\chef\chef-repo\.chef\trusted_
 certs/localhost.crt
- 
+
+
+
+
+
+
+________________________________________________________________________________________
+
+some urls to remember.
+https://learn.chef.io/install-and-manage-your-own-chef-server/linux/install-chef-server/install-chef-server-using-your-hardware/
