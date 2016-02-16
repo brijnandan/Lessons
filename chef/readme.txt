@@ -57,3 +57,23 @@ sudo chef-server-ctl org-create ORG_SHORT_NAME "ORG_LONG_NAME" --association_use
 sudo chef-server-ctl org-create cloudbyte  "cloudbyte inc" --association_user test
 
 above command generates a rsa key
+
+
+
+9. Download the starter kit to your machine from where you want to administer itthe mistake commited by me was i did not give ip address of chef server instead of localhost
+we need to change rb file in this case.
+
+knife ssl fetch
+
+
+E:\Docs\CBdocs\chef\chef-repo>knife ssl fetch
+WARNING: Certificates from 10.10.113.10 will be fetched and placed in your trust
+ed_cert
+directory (e:\docs\cbdocs\chef\chef-repo\.chef\trusted_certs).
+
+Knife has no means to verify these are the correct certificates. You should
+verify the authenticity of these certificates after downloading.
+
+Adding certificate for localhost in e:\docs\cbdocs\chef\chef-repo\.chef\trusted_
+certs/localhost.crt
+ 
