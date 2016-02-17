@@ -91,6 +91,9 @@ https://learn.chef.io/install-and-manage-your-own-chef-server/linux/install-chef
 
 
 https://learn.chef.io/install-and-manage-your-own-chef-server/linux/manage-a-node-on-your-chef-server/  till here done
+
+
+https://learn.chef.io/manage-a-node/windows/get-a-node-to-bootstrap/
 ______________________________________________________________________________
 
 
