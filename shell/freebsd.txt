@@ -1,0 +1,52 @@
+
+FreeBSD PKGNG bootstrap
+
+For months FreeBSD has been prompting me to upgrade from pkg_ tools to pkgng, the next generation of their package management tools. In particular, using ports commands displays a link to a blog post with more detail. I’m embarking on that upgrade now, and the first problem was getting a new automatically deployed FreeBSD 8.4 machine to start using pkg. The manual process is easy:
+
+# pkg
+The package management tool is not yet installed on your system.
+Do you want to fetch and install it now? [y/N]: y
+
+Automating this wasn’t documented, nor available from my usual sources of advice, so I started to experiment.
+
+# make -C /usr/ports/ports-mgmt/pkg install
+# pkg_create -xb pkg
+pkg_create: no packages match pattern
+# pkg_info
+pkg_info: no packages installed
+# pkg create -x pkg
+Creating package for pkg-1.4.4
+
+Okay, so pkg_ doesn’t know about pkgng, fair enough. How am I to get this pkg package installed without pkg being installed to install it?! Ye olde bootstrap problem. Dan Langille came to the rescue with a helpful command line:
+
+env ASSUME_ALWAYS_YES=YES pkg bootstrap
+
+This installs the latest package from default sources, and I suspect will be what I use in the majority of cases, but while starting to build that into our systems for testing, I noted something in pkg(8): “pkg-static is a statically linked variant of pkg typically only used for the initial installation of pkg.” and then
+
+# tar -tf pkg-1.4.4.txz
+...
+/usr/local/sbin/pkg-static
+
+So the way to bootstrap entirely from the network, is to take that packaged package to a newly installed FreeBSD 8.4 machine, and use the pkg-static within it to bootstrap the whole package:
+
+# tar -xf pkg-1.4.4.txz --strip-components 4 /usr/local/sbin/pkg-static
+# ./pkg-static add pkg-1.4.4.txz
+# pkg2ng
+
+The packaging system still doesn’t work though, because no repositories are defined:
+
+# pkg update
+No active remote repositories configured.
+# pkg -vv | grep -A 9 Repositories:
+Repositories:
+
+Fixed with help from Romain Vrignaud’s blog post, but without quoting the enabled value, since it’s a boolean:
+
+# mkdir -p /usr/local/etc/pkg/repos
+# cat << 'EOF' > /usr/local/etc/pkg/repos/FreeBSD.conf 
+FreeBSD: {
+  url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest",
+  mirror_type: "srv",
+  enabled: yes,
+}
+'EOF'
