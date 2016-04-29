@@ -27,4 +27,5 @@ jenkins Live developement jenkins: https://ci.jenkins-ci.org/view/Infrastructure
 
 https://documentation.cloudbees.com/docs/cookbook/_containers.html
 
-
+https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md
+//pipeline tutorial
