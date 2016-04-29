@@ -25,4 +25,6 @@ java -jar jenkins-cli.jar -s http://my.jenkins.host delete-builds myproject '1-7
 
 jenkins Live developement jenkins: https://ci.jenkins-ci.org/view/Infrastructure/
 
+https://documentation.cloudbees.com/docs/cookbook/_containers.html
+
 
