@@ -21,7 +21,11 @@ Okay, so pkg_ doesn’t know about pkgng, fair enough. How am I to get this pkg 
 
 env ASSUME_ALWAYS_YES=YES pkg bootstrap
 
-This installs the latest package from default sources, and I suspect will be what I use in the majority of cases, but while starting to build that into our systems for testing, I noted something in pkg(8): “pkg-static is a statically linked variant of pkg typically only used for the initial installation of pkg.” and then
+This installs the latest package from default sources, and I suspect will be what I use in the majority of cases, but while starting
+
+___________________to build that into our systems for testing, I noted something in pkg(8): “pkg-static is a statically linked variant
+
+of pkg typically only used for the initial installation of pkg.” and then
 
 # tar -tf pkg-1.4.4.txz
 ...
@@ -50,3 +54,18 @@ FreeBSD: {
   enabled: yes,
 }
 'EOF'
+
+
+
+__________________________________________
+
+
+http://askubuntu.com/questions/39628/old-version-of-gcc-for-new-ubuntu
+
+
+you can use debian snapshots. Add the following lines to /etc/apt/sources.list
+
+eb     http://snapshot.debian.org/archive/debian/20070730T000000Z/ lenny main
+deb-src http://snapshot.debian.org/archive/debian/20070730T000000Z/ lenny main
+deb     http://snapshot.debian.org/archive/debian-security/20070730T000000Z/ lenny/updates main
+deb-src http://snapshot.debian.org/archive/debian-security/20070730T000000Z/ lenny/updates main
