@@ -46,4 +46,28 @@ sudo gitlab-rake gitlab:check SANITIZE=true
 
 
 
+__________________________________________________________________________________
 
+
+gitlab 2nd round
+
+installation :
+
+it is certain to fail for the first time 
+as in the documentation clearly says it all.
+1: sudo apt-get install curl openssh-server ca-certificates postfix
+2: add the repository from where to download,
+curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+sudo apt-get install gitlab-ce
+
+3. if it fails sudo apt-get install gitlab-ce --fix-missing
+4. sudo gitlab-ctl reconfigure #running chef
+
+
+vi /etc/gitlab/gitlab.rb # Main file which can change configurations
+hosted on chef automation framework 
+
+run 
+sudo gitlab-ctl reconfigure  # after making changes to above file
+to change the git repo url change the above file entry and restart the service 
+ sudo gitlab-ctl restart
