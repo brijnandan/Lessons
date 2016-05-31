@@ -1,11 +1,11 @@
 ##This doc describes how to install and understand the concepts of gitlab. 
 
 reasons for choosing gitlab.
-1. community edition is free.
-2. easy installation.
-3. UI features.
-4. No seperate review software required.
-5. minimal configuration from backend.
+1. community edition is free. <br />
+2. easy installation.<br />
+3. UI features.<br />
+4. No seperate review software required.<br />
+5. minimal configuration from backend.<br />
 
 ### The documents has below mentioned topics,
 ### 1. requirements and installation.
