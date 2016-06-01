@@ -1,0 +1,2 @@
+mydata <- read.csv("plot.csv")
+matplot(mydata[, 1], mydata[, -1], type="l",	xlab="interval", ylab="rate")
