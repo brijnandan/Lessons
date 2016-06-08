@@ -31,7 +31,7 @@ This file is changed by gitlab.rb do not directly change this file. If it is don
  So any change done in gitlab.rb show follow running sudo gitlab-ctl reconfigure <br />
  
  
-<h4> upgrading gitlab from yum.  <br />
+## upgrading gitlab from yum.  <br />
  
  sudo yum install gitlab-ce
  
