@@ -14,9 +14,23 @@ sudo systemctl start sshd <br />
 sudo yum install postfix <br />
 this install the mailing package which is uses bu gitlab.<br />
 sudo systemctl enable postfix.<br />
+(postfix is linux service which gitlab uses to send out emails) <br /> 
 sudo systemctl start postfix<br />
 sudo firewall-cmd --permanent --add-service=http<br />
 sudo systemctl reload firewalld<br />
+
+gitlab basically uses chef for its software configuration management. <br />
+there are two important files used by chef for its configuration.< br />
+
+first is /etc/gitlab/gitlab.rb <br />
+gitlab.rb is the file where we need to make the changes <br />
+
+second file is /var/opt/gitlab/gitlab-rails/etc/gitlab.yml<br />
+This file is changed by gitlab.rb do not directly change this file. If it is done it gets erased every time you run "sudo gitlab-ctl reconfigure" < br />
+
+ So any change done in gitlab.rb show follow running sudo gitlab-ctl reconfigure
+
+
 
 
 
