@@ -8,13 +8,15 @@ run below commands to innitiate the installation.
 
 sudo yum install curl policycoreutils openssh-server openssh-clients
 
-this install curl package download(used for file transfers in url format), policycoreutils(python package for managing SE linux environment. , openssh server and client.
-sudo systemctl enable sshd
-sudo systemctl start sshd
-sudo yum install postfix
-this install the mailing package which is uses bu gitlab.
-sudo systemctl enable postfix
-sudo systemctl start postfix
-sudo firewall-cmd --permanent --add-service=http
-sudo systemctl reload firewalld
+this install curl package download(used for file transfers in url format), policycoreutils(python package for managing SE linux environment. , openssh server and client. <br />
+sudo systemctl enable sshd <br />
+sudo systemctl start sshd <br />
+sudo yum install postfix <br />
+this install the mailing package which is uses bu gitlab.<br />
+sudo systemctl enable postfix.<br />
+sudo systemctl start postfix<br />
+sudo firewall-cmd --permanent --add-service=http<br />
+sudo systemctl reload firewalld<br />
+
+
 
