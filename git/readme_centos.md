@@ -65,4 +65,4 @@ gitlab_rails['smtp_enable_starttls_auto'] = true<br />
 gitlab_rails['smtp_tls'] = false<br />
 gitlab_rails['smtp_openssl_verify_mode'] = 'peer' # Can be: 'none', 'peer', 'client_once', 'fail_if_no_peer_cert', see http://api.rubyonrails.org/classes/ActionMailer/Base.html
 
-
+We need to run sudo "gitlab-ctl reconfigure" inorder to change the settings done or else the changes will not be reflected to the setup.
