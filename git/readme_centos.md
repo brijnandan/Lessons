@@ -34,9 +34,35 @@ This file is changed by gitlab.rb do not directly change this file. If it is don
 ## upgrading gitlab from yum.  <br />
  
  sudo yum install gitlab-ce
- 
+
+### logs location for debugging.<br />
+
+application logs : /var/log/gitlab/gitlab-rails/application.log <br />
+the above logs gives the details about all the logs which are related to operatins done in github.
+
+for emails :  for SMTP debugging the postfix logs are located at /var/log/maillog <br />
+these are the logs which are helpful for debugging email notifications problem.
+
+there are mutiple logs related to the different components of the gitlab. these are located at /var/log/gitlab  it contains application server nginx postgresql and some other services
 
 
 
+### smtp configuration for gitlab 
+
+the changes to your smtp configuration can be done in file /etc/gitlab/gitlab.rb 
+I am using gmail host as smtp provider so below are configuration to change in the file <br />
+
+gitlab_rails['smtp_enable'] = true
+gitlab_rails['smtp_address'] = "smtp.gmail.com"
+gitlab_rails['smtp_port'] = 587
+gitlab_rails['smtp_user_name'] = "email@cloudbyte.com"
+gitlab_rails['smtp_password'] = "password"
+gitlab_rails['smtp_domain'] = "smtp.gmail.com"
+gitlab_rails['smtp_authentication'] = "login"
+gitlab_rails['smtp_enable_starttls_auto'] = true
+gitlab_rails['smtp_tls'] = false
+gitlab_rails['smtp_openssl_verify_mode'] = 'peer' # Can be: 'none', 'peer', 'client_once', 'fail_if_no_peer_cert', see http://api.rubyonrails.org/classes/ActionMailer/Base.html
+# gitlab_rails['smtp_ca_path'] = "/etc/ssl/certs"
+# gitlab_rails['smtp_ca_file'] = "/etc/ssl/certs/ca-certificates.crt"
 
 
