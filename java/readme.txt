@@ -13,7 +13,7 @@ sudo update-alternatives --config java
 if we want to use different java version in ubuntu 
 
 
-sudd-apt-repository ppa:webupd8team/java
+sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
 sudo update-alternatives --config java
