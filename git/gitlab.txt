@@ -90,4 +90,12 @@ gitlab_rails['smtp_openssl_verify_mode'] = 'peer' # Can be: 'none', 'peer', 'cli
 # gitlab_rails['smtp_ca_file'] = "/etc/ssl/certs/ca-certificates.crt"
 
 
+_______________________________________________________________________
+
+some urls used for gitlab runners for implementing CI
+
+https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/install/linux-repository.md
+
+
+https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/issues/271
 
