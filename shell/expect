@@ -1,0 +1,22 @@
+script to clone from svn to git repo without asking for authentication
+_______________________________________________________________________
+
+#/usr/bin/expect -f
+set timeout -1
+
+spawn git svn clone --stdlayout --authors-file=authors.txt svn+ssh://ports esports
+#expect "*?assword"
+##spawn  git svn clone --stdlayout --authors-file=authors.txt svn+ssh://ports orts
+
+while {1} \
+{
+expect \
+   {
+       "*?assword" {send "yourpassword\r" }
+   }
+}
+expect "# " { send "exit\r" }
+~
+______________________________________________________________________
+
+
