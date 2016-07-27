@@ -1,0 +1,22 @@
+#This document is related to the study I have done in the book classic shell scripting
+
+1. shebang line:
+the maximum length of the #! line varies from 63 to 1024 characters. Try to keep it less than 64 characters.
+
+2. to prevent spoofing attacks.
+$ cat nusers Show contents
+#! /bin/sh - Magic #! line
+who | wc -l Commands to run
+The bare option – says that there are no more shell options; this is a security feature
+to prevent certain kinds of spoofing attacks.
+
+
+
+3. how to run multiple commands in shell script simultaneously (use of ampersand)
+Finally,semicolons separate multiple commands on the same line. The shell executes
+them sequentially. If you use an ampersand (&) instead of a semicolon,the shell
+runs the preceding command in the background,which simply means that it doesn’t
+wait for the command to finish before continuing to the next command.
+
+4. major difference between printf and echo command in shell.
+printf does not goes to newline but echo will go the newline
