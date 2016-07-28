@@ -20,3 +20,24 @@ wait for the command to finish before continuing to the next command.
 
 4. major difference between printf and echo command in shell.
 printf does not goes to newline but echo will go the newline
+
+Note : logger command 
+
+this command provides the logging functionality in unix 
+in BSD it writes to /var/log/messages file and in ubuntu it writes to /var/log/syslog
+
+
+
+5.REGULAR EXPRESSIONS:
+BRE AND ERE
+grep commands : basic introduction
+
+finding a pattern searching a pattern and prints it
+
+grep -E extended RE
+grep -F fixed RE
+     -f reads pattern from a file
+	 -i ignores	lettercase when doing pattern matching.
+	 -v prints line tha does not match the pattern. 
+	 -q Be quiet. Instead of writing lines to standard output, grep exits successfully if mpattern matches or else exits 1
+
