@@ -1,0 +1,7 @@
+cut file.txt -cN- | cat > new_file.txt
+
+above command is to remove the first N characters of a file
+
+ to get the unique names of all  the developers in the svn we have" 
+
+ svn log --quiet svn://brij@xxx.x10.x1.x102/repo/mgmt | awk '/^r/ {print $3}' | sort | uniq
