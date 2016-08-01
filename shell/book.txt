@@ -41,3 +41,12 @@ grep -F fixed RE
 	 -v prints line tha does not match the pattern. 
 	 -q Be quiet. Instead of writing lines to standard output, grep exits successfully if mpattern matches or else exits 1
 
+  1) matching single characters a.z with .
+  2) with [] , ifconfig | grep -i R[U]N   , ifconfig | grep -i R[Up]N ; both will search for a word with three letters R and N.
+  Supplying a caret (^) as the first character in the bracket expression complements
+  the set of characters that are matched; such a complemented set matches
+  any character not in the bracketed list. Thus, [^aeiouy] matches anything that
+  isn’t a lowercase vowel,including the uppercase vowels,all consonants,digits,
+  punctuation, and so on.
+  3) expressions can be shortened to [0-9] and [0-9a-fA-F], respectively.
+  
