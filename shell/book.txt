@@ -1,5 +1,8 @@
 #This document is related to the study I have done in the book classic shell scripting
 
+note to disable an ehternet on a ubuntu computer by command line. 
+sudo ifconfig eth1 down
+
 1. shebang line:
 the maximum length of the #! line varies from 63 to 1024 characters. Try to keep it less than 64 characters.
 
@@ -50,3 +53,19 @@ grep -F fixed RE
   punctuation, and so on.
   3) expressions can be shortened to [0-9] and [0-9a-fA-F], respectively.
   
+  
+6.sorting-
+
+sort filename
+if contents are in numbers sorting is done in ascending order , if alphabets then sequentially.
+
+sorting in reverse order , sort -r filename
+
+rembmeber uniq utility
+
+extracting n lines from first or last
+head -n 3 words  (extracting first 3 lines from file word)
+sed -e 3q words  also does the same task.
+
+tail -n 3 words  (taking last 3 lines  from file word)
+
