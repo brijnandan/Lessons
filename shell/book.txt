@@ -69,3 +69,15 @@ sed -e 3q words  also does the same task.
 
 tail -n 3 words  (taking last 3 lines  from file word)
 
+7. imp new: 
+xargs it divides the contents of the output as arguments in a program.
+
+
+8. to set the script to run in debug level.
+
+before starting the script write below lines.
+set -x
+ before running the script we need to run below command.
+ export PS4="DEBUG => "
+ 
+ after this the output of the command will come in debug mode.
