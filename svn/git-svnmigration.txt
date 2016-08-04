@@ -1,0 +1,85 @@
+Step 1: create  a directory in your machine where you need to proceed with the migration.
+
+Step 2: Create authors file from svn repository. It can be done by using command as below,
+  svn log --quiet svn+ssh://user@svn-server/svnrepo/ |awk '{print $3}' | sort | uniq
+  this will give the unique list of users who have checked into the repository till date.
+  
+Step 3: To prepare authors.txt file we will need to enter the values in below format
+  ajith = ajith <Ajith@cloudbyte.com>
+  
+  simple way is to do manually :) to reduce the task.
+  I have written a shell script which can help to an extent.
+  1) redirect the output of command in step 2 to list.txt file.
+  2) for i in ` cat list.txt `
+        do
+                echo $i = $i \<$i@cloudbyte.com\>   # this \\ is put due to escape sequence in the characters.
+        done
+  3) redirect the O/P of above shell script to authors.txt file
+ 
+
+Step 4: Now we have authors.txt file ready. We can manually edit the wrong e-mail ids.
+
+Step 5: since the svn has dual authentication , it might asks for password multiple times whilw migration, to automate this scenario
+an expect script would help in this this case.
+
+  ## expect script starts from here
+  #/usr/bin/expect -f
+  set timeout -1
+
+  spawn git svn clone --stdlayout --authors-file=authors.txt svn-url esos
+  #expect "*?assword"
+  
+  while {1} \
+  {
+  expect \
+   {
+       "*?assword" {send "password\r" }
+   }
+  }
+  expect "# " { send "exit\r" }
+  ## expect script ends here.
+  
+  to run above script save the script as "script.expect" in your unix system and run it with the expect utility.
+  and run as /usr/bin/expect script.expect 
+  
+  this will start the migration automatically. wait as it takes quite some time (depends on the commmit history and size of your svn repo)
+ 
+
+step 6 : Since the repository has been migrated successfully with all the branches in it. verify once if all the branches are migrated successfully. 
+ once you type command "git branch" you can see only master branch in it. other branches are present in your local repo but they are in background.
+ 
+ to checkout all the branches i have a script which will checkout all the branches once. We are doing this because when we will
+ try to push all the branches to the git repo it will push all branches only if they are checked out at least once in your local repo.
+ 
+ step 7: you can see all the branches by using command " git branch -r" it gives all the branches in the background.
+ 
+ to checkout all the branches you can do one by one manually or use below script to do so.
+ git checkout -b branch-name remotes/branch-name
+
+ i am using a shell script to checkout all the branches at once. 
+ 1)  git branch -r | cut -c3- > branches.txt
+ 2)for i in ` cat branches.txt `
+    do
+        echo $i
+        git checkout -b $i remotes/$i
+    done
+
+	
+	the above script will switch all the branches from background to foreground.
+step 8. Now you can checkin  the repository to git.
+
+	1)create an empty repository in git UI.
+	2)take remote url and add it to cloned repository.
+	   git remote add origin http://99.**.**.**/***/***.git
+	   to confirm if the repo has been added try command "git remote show origin" it will display remote url where it will push the repo.
+	3) pushing all the branches 
+	   git push --all origin
+	   
+step 9. all the branches are now pushed into git . we can perform various sanity checks to prove the migration is successful or not.
+	
+
+
+
+ 
+ 
+ 
