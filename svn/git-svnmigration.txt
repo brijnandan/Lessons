@@ -80,6 +80,12 @@ step 9. all the branches are now pushed into git . we can perform various sanity
 
 
 
- 
- 
+ After the migration is done successfully. If we need to sync all the git repositories with svn repositories in all the branches
+ step 1: goto home directory of local git repo which you have cloned 
+ step 2: run "git svn fetch"
+ step 3: it will fetch all the new changes from svn repo to your migrated git repo.
+ step 4: since all the branches were checked out at least once . we will have to remove all the local branches.
+         git branch -D $i  (deleting the branches using  shell scripts)(-D capital will remove the branch without any warning or user interaction)
+ step 5: run checkout.sh again which will checkout all the branches with new change in it.
+ step 6: "git push --all origin" will run in this case. Your changes from svn have come to git repository.
  
