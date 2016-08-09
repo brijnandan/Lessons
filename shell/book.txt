@@ -1,3 +1,9 @@
+﻿
+
+
+
+
+
 #This document is related to the study I have done in the book classic shell scripting
 
 note to disable an ehternet on a ubuntu computer by command line. 
@@ -81,3 +87,59 @@ set -x
  export PS4="DEBUG => "
  
  after this the output of the command will come in debug mode.
+
+ 
+ 
+ ############################################
+ --------------------------------------------
+ Security in shell scripts.
+ 
+ 
+ 1.   never put .(dot) in PATH in shell scripts to make it more secure , it is a opwn door for torjan horses.
+      executable specially should  come from full path.
+	  
+ 2.  reset environment variables after use. 
+ 3. cd to a know directory and then . use relative pathnames  to known directory. also use exit 1 ; cd  scripts || exit 1
+ 4. always use full pathnames for commands.
+ 5. use syslog to capture logs and timestamp of file which are run.
+ 6. always quote user imput  while using it eg "$1"  and "$*".
+ 7. do not use eval on user inputs in a shell script.
+ 8. Suspected sybolic links to critical file systems. Whenever we perform chmod to files or edit files we must check if any symbolic links exists.
+ 9. Use setgid rather than setuid, if possible as relatively less damage can be done to group than uid.
+ 
+ 
+ Note: IFS internal field seperator.
+ 
+ 
+ 
+ Basic commands to list and display files.
+ 
+ 1. "echo /bin/*sh" will list the files containing sh at the last.  "ls  /bin/*sh | cat"
+ 2. "ls -1 "  only names in listwise.
+ 3. "ls -latrdg i(inodes)t"
+ 4. to calculate octal dump of a file.
+      root@automate:~# ls  tes*ct | od -a -b
+0000000   t   e   s   t   .   e   x   p   e   c   t  nl
+        164 145 163 164 056 145 170 160 145 143 164 012
+0000014
+
+
+
+###Listing file metadata.
+
+to display the metadata in more readable format we use octal dumps
+to turn steams of unprinatable bytes into text format.
+
+/proc filesystem
+
+
+/tmp stores temporary files. gets deleted after reboots.
+/var/tmp does not get deleted after reboots. It usually contains the files recovered after system crash.
+
+Stick bits:  inorder to avoid the removal of any files from a folder in unix sticky bit it set to 1 to avoid deletion of folders
+and files by mistake or intendedly.
+
+how to set it "chmod 1755 test"  here 1 indicates sticky bit is set to 1. you will see a t in front of directories with sticky bit set to 1.
+drwxr-xr-t  2 root root 4096 Aug  9 16:14 test
+
+page277

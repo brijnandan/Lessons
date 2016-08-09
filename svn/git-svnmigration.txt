@@ -5,21 +5,21 @@ Step 2: Create authors file from svn repository. It can be done by using command
   this will give the unique list of users who have checked into the repository till date.
   
 Step 3: To prepare authors.txt file we will need to enter the values in below format
-  ajith = ajith <Ajith@cloudbyte.com>
+  ajith = ajith <Ajith@comapny.com>
   
   simple way is to do manually :) to reduce the task.
   I have written a shell script which can help to an extent.
   1) redirect the output of command in step 2 to list.txt file.
   2) for i in ` cat list.txt `
         do
-                echo $i = $i \<$i@cloudbyte.com\>   # this \\ is put due to escape sequence in the characters.
+                echo $i = $i \<$i@company.com\>   # this \\ is put due to escape sequence in the characters.
         done
   3) redirect the O/P of above shell script to authors.txt file
  
 
 Step 4: Now we have authors.txt file ready. We can manually edit the wrong e-mail ids.
 
-Step 5: since the svn has dual authentication , it might asks for password multiple times whilw migration, to automate this scenario
+Step 5: since the svn has dual authentication , it might asks for password multiple times while migration, to automate this scenario
 an expect script would help in this this case.
 
   ## expect script starts from here
