@@ -7,4 +7,4 @@ This is the file which gives info about the particular module
 
 4.  creating functions in  a  shell script and calling it from other function, other function or main program.
 
-5. rsync -rvnc --exclude=.svn  es1.4.0.p6/ es13-netmagic-patch08/ # to compare the folders contents if same or not.
+5. rsync -rvnc --exclude=.svn  folder1/ folder2/ # to compare the folders contents if same or not.
