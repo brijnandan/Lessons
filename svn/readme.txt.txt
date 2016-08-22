@@ -6,3 +6,10 @@
 
 
   2. command to create branch from a particular revision point : svn copy -r3408 url_from  url_to -m "message"
+
+
+  3. command to rename a branch in svn
+
+
+  svn move https://server/repos/myrepo/branches/oldbranch \
+    https://server/repos/myrepo/branches/newbranch
