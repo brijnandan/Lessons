@@ -29,3 +29,8 @@ https://documentation.cloudbees.com/docs/cookbook/_containers.html
 
 https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md
 //pipeline tutorial
+
+
+#########
+for freebsd we need to put 
+/usr/local/etc/rc.d in the rc.conf file we can change xmx and xms setting in this page
