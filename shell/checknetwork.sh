@@ -1,3 +1,4 @@
+set -x
 echo "checking the Main ESX"
 
 	ping -c 4 x.x.x.x   &> /dev/null  #devnull does not prints the output of command in the terminal
