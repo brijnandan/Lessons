@@ -14,3 +14,13 @@ Then you would git commit --amend --author="Author Name <email@address.com>" aga
 git rebase --continue
 The rebase would complete.
 git commit --amend --author="Author Name <email@address.com>"
+
+
+######################################################
+reseting the head.
+git reset --hard HEAD~1
+this is remove the last commit from the workspace and will deete the commit.
+
+To push the changes to the repo use -f switch. this will rewrite the history in the workspace.
+
+
