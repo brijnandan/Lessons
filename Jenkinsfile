@@ -1,21 +1,19 @@
-pipeline {
-    agent any
+node('master') {
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
+  stage('Configure') {
+    echo configure
+  }
+
+  stage('Checkout') {
+    echo checkout 
+  }
+
+  stage('Build') {
+    echo build 
+  }
+
+  stage('Archive') {
+   echo archive
+  }
+
 }
