@@ -6,4 +6,8 @@
 
 Creating a django project:
 
-django admin.py startproject
+1) django admin.py startproject
+2) python manage.py migrate (aaplying chnages to the database)
+3) create superuser  (python manage.py createsuperuser)
+4) python manage.py runserver (running an application server)
+
