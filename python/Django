@@ -1,0 +1,9 @@
+1) setup pip, virtualenv (sudo pip install virtualenv)
+2) create a virtual env  using virtualenv myapp.
+3) goto folder of virtual env  and activate using "source bin/activate"
+4) pip install Django==1.10  (to check pip is installed use pip freeze)
+
+
+Creating a django project:
+
+django admin.py startproject
