@@ -10,4 +10,11 @@ Creating a django project:
 2) python manage.py migrate (aaplying chnages to the database)
 3) create superuser  (python manage.py createsuperuser)
 4) python manage.py runserver (running an application server)
+ 
+ 
+ Creating aa app
+ 1) python manage.py startapp profiles
+ 2) making migrations .. python manage.py makemigrations ( making migrations)
+ 3) python manage.py migrate  (to migrate)
+
 
