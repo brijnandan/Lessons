@@ -16,5 +16,10 @@ Creating a django project:
  1) python manage.py startapp profiles
  2) making migrations .. python manage.py makemigrations ( making migrations)
  3) python manage.py migrate  (to migrate)
+ 
+
+add the particular app to settings.xml
+then after adding make migrations to set changes to databases.
+ Create models
 
 
