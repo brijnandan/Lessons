@@ -24,3 +24,8 @@ this is remove the last commit from the workspace and will deete the commit.
 To push the changes to the repo use -f switch. this will rewrite the history in the workspace.
 
 
+GITHUB: jenkins file sample:
+https://github.com/UNINETT/nav/blob/master/Jenkinsfile
+
+
+
