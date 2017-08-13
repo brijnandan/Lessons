@@ -1,0 +1,69 @@
+def num = []
+List num1 = [1,2,3,4,5,6,6,7,8,9,9,9,10]
+println num
+println num1
+println num1.class.name
+
+
+List num2 = [1,2,3,4,5,6,6,7,8,9,9,9,10] as LinkedList
+println num2
+println num2.class.name
+num2.push(99)
+println num2
+
+num2.putAt(0,77)
+println num2
+
+// adding to a list will create a new object 
+println num2
+println num2 +  [3,4,5]
+println num2
+
+//adding by operator overloading
+num2 << 88
+println num2
+println num2.pop()
+print num2
+
+def new1 = num2 - 99
+println new1
+
+println num2.getAt(0..5)
+
+//clear the lists
+
+//num2.clear()
+//num2 = []
+
+//iterating through list
+for( x in num2) {
+println x
+}
+println num2
+
+// flatten a list
+num2 << [3,4,5]
+num2 << [66,77]
+
+println num2
+println num2.flatten()
+
+//printing unique numbers
+
+println num2.unique()
+
+
+
+
+//
+
+def numbers1 = [1,2,3,4,5,6,7,8,9,11,2,3,4,567,33] as Set
+print numbers1
+print numbers1.class.name
+
+
+def numbers = [1,2,3,4,5,6,7,8,9,11,2,3,4,567,33] as SortedSet
+print numbers
+print numbers.class.name
+ 
+
