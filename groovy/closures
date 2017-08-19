@@ -1,0 +1,55 @@
+// basic closure 
+def c = { }
+println c.class.name
+println c instanceof Closure
+
+//
+def sayHello = {
+    println "Hello "
+}
+
+sayHello()
+
+
+//above function can take arguments
+def names = { name -> 
+    println  "hello , $name"
+    }
+names ("brij")
+
+//
+List nums = [1,3,4,5,6,7,9]
+nums.each({
+    println  it  // it i a default keyword refers to current object.
+  })
+
+List nums1 = [1,3,4,5,6,7,9]
+nums1.each({ num ->
+    println  num  // it i a default keyword refers to current object.
+  })
+
+
+//
+
+def timesTen(num,closure) {
+     closure(num +10 )
+     }
+     
+ timesTen(10, {  println it })
+ timesTen(2) { 
+  println it
+}
+
+//demo for times method for integrer class
+10.times {
+ println it
+}
+ 
+import java.util.Random
+
+Random rand = new Random()
+
+3.times  {
+    println rand.nextInt()
+} 
+ 
