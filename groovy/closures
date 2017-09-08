@@ -53,3 +53,51 @@ Random rand = new Random()
     println rand.nextInt()
 } 
  
+///closure parameters *****************************
+
+def foo = {
+    print it
+}
+
+foo('dan')
+
+//def closuree = {  ->
+//println "no params..."
+ //}
+
+
+//closuree(1)
+
+def hello = { var1 , var2 -> 
+    println "$var1 $var2" }
+    
+hello("brij","chauhan")
+
+
+def hello1 = { String  var3 , String var4 = "chauhan" -> 
+    println "$var3, $var4" }
+    
+hello1("ankita")
+
+
+//Var-args example
+def brijs = {String... args  ->
+    args.join('')
+    
+  }
+  
+ println brijs("brij1","ankita","chauhan")
+ 
+ //
+ 
+ def someMethod(Closure c) {
+     println "..."
+     println c.maximumNumberOfParameters
+     println c.parameterTypes
+ }
+ 
+ def someClosure = { int x , int y ->  x + y }
+ someMethod(someClosure)
+
+
+///closure parameters *****************************
