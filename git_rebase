@@ -28,4 +28,11 @@ GITHUB: jenkins file sample:
 https://github.com/UNINETT/nav/blob/master/Jenkinsfile
 
 
+to revert any presvious commit in  git 
+
+git revert --strategy resolve <commit>  (this will create a new Commit ID with the history maintained in the commit.. )
+
+
+
+
 
