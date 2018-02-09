@@ -20,3 +20,27 @@ expect "# " { send "exit\r" }
 ______________________________________________________________________
 
 
+#!/usr/bin/expect -f
+set timeout -1
+spawn ssh [lindex $argv 1]@[lindex $argv 0]
+
+expect "yes/no" {
+        send "yes\r"
+        expect "*?assword" { send "[lindex $argv 2]\r" }
+        } "*?assword" { send "[lindex $argv 2]\r" }
+
+
+expect "# "  {send "ccccccc \r"}
+expect "# "  {send "ccccccc \r"}
+expect "# "  {send "echo test \r"}
+
+
+expect "# "  {send "exit \r"}
+expect eof
+
+
+ /usr/bin/expect test.expect  ubuntu expect root  root123
+
+
+
+
