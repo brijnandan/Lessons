@@ -1,0 +1,31 @@
+pipeline {
+    agent {
+    node {
+      label 'master'
+    }
+    
+  }
+  stages {
+    stage('Checkout') {
+		steps {
+			script{  
+				try {
+				echo 'checkout scm'
+				//checkout scm
+					}catch(err) {
+					 throw err
+								} 
+			
+				}
+			  }
+			
+					}
+	
+	
+		    
+      
+    
+  
+}
+
+
