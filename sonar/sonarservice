@@ -1,0 +1,36 @@
+2) Installation as a service: On Ubuntu16.02 LTS.
+
+Download  the zip installer and unzip at a location with "non root user" 
+
+Create and edit "/etc/systemd/system/sonar.service"  as below,
+
+
+
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
+ 
+[Service]
+Type=forking
+ 
+ExecStart=SONARQUBEHOME/bin/linux-x86-64/sonar.sh start
+ExecStop=SONARQUBEHOME/bin/linux-x86-64/sonar.sh stop
+ 
+User=non-root
+Group=non-root
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
+
+
+SOARQUBEHOME should be the path of your unzipped installation folder.
+
+
+
+
+
+sudo systemctl start sonar
+sudo systemctl enable sonar
+ 
+sudo systemctl status sonar
