@@ -41,7 +41,7 @@ Start GitLab
 
 rest apis
 
-https://gitlab.com/api/v3/projects?/
+
 sudo gitlab-ctl start
 
 Check GitLab
@@ -102,4 +102,9 @@ https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/install/li
 
 
 https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/issues/271
+
+####
+rest api 
+https://gitlab.com/api/v3/projects?/
+https://gitlab.com/api/v4/projects/5747886/members
 
