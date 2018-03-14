@@ -38,6 +38,10 @@ This command will overwrite the contents of your GitLab database!
 sudo gitlab-rake gitlab:backup:restore BACKUP=1393513186
 
 Start GitLab
+
+rest apis
+
+https://gitlab.com/api/v3/projects?/
 sudo gitlab-ctl start
 
 Check GitLab
