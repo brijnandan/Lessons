@@ -1,0 +1,23 @@
+Cloning multiple repositories at once.
+
+
+create a default.xml file,
+
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="origin" fetch="url_github.com/" />
+  <default revision="master" remote="origin" />
+
+  <project path="lib/localfolder1"
+           name="project1/repo1.git" remote="origin" />
+
+  <project path="lib/localfolder2"
+           name="project2/repo2" remote="origin" />
+
+  <project path="apps/localfolder3"
+           name="proj3/repo3.git" remote="origin" />
+
+</manifest
+
+
+
