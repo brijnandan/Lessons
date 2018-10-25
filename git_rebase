@@ -32,6 +32,20 @@ to revert any presvious commit in  git
 
 git revert --strategy resolve <commit>  (this will create a new Commit ID with the history maintained in the commit.. )
 
+#############################################
+how to change the date of a particular commit
+##############################################
+
+1. Rebase to the point where you want to change the commit history
+ git rebase -i HEAD~5
+ change the prefix of the commit as edit or e
+ 
+2. git commit --amend --date="Thu, 24 Oct 2018 013:00:56 +0000"
+
+3. run " git rebase --continue" until you complete the rebase.
+
+
+
 
 
 
