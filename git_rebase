@@ -52,6 +52,7 @@ pull requests from the commits in bitbuckets.
 #########################
 
 enable guest add on in virtual box.
+sudo apt-get install virtualbox-guest-x11
 sudo VBoxClient --clipboard
 #########################
 
