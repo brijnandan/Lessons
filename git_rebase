@@ -51,7 +51,8 @@ https://github.com/jenkinsci/generic-webhook-trigger-plugin/blob/master/src/test
 pull requests from the commits in bitbuckets.
 #########################
 
-
-
+enable guest add on in virtual box.
+sudo VBoxClient --clipboard
+#########################
 
 
